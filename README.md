@@ -422,3 +422,17 @@ Date:   Fri Aug 27 18:12:17 2021 +0530
 XXXXXXXXX End of Praticle  XXXXXXXXX
 </details>
  
+
+# Git diff: see the differences.
+<details>
+  <summary>Click to expand!</summary>
+ 
+ ``` git diff``` 
+
+diff of what is changed but not staged OR see diff between tracked and staged
+
+``` git diff --staged ``` 
+
+diff of what is staged but not yet committed OR see diff between staged and committed 
+
+</details>
