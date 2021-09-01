@@ -422,7 +422,7 @@ Date:   Fri Aug 27 18:12:17 2021 +0530
 XXXXXXXXX End of Praticle  XXXXXXXXX
 </details>
  
-
+##############################################################################################
 # Git diff: see the differences.
 <details>
   <summary>Click to expand!</summary>
@@ -436,3 +436,114 @@ diff of what is changed but not staged OR see diff between tracked and staged
 diff of what is staged but not yet committed OR see diff between staged and committed 
 
 </details>
+  
+###################################################################################################
+ 
+  ### @Practice Time 
+
+
+<details>
+<summary>Click to expand!</summary>
+ 
+How to implement .diff in our git project.
+ 
+### Step-1.0 initialization
+
+- Open Git Bash in your working Dir. using Right click on the folder and select Git Bash.
+
+- type ``` git status ``` & hit the enter 
+
+- output ``` fatal: not a git repository (or any of the parent directories): .git ```
+
+its means there is no any git initialized.
+
+- type ``` git init ```
+
+- output ``` Initialized empty Git repository in D:/Learn/Git/.git/ ```
+
+now your working directory have a git file.
+
+- type ``` git status ``` & hit the enter 
+
+-output (I have 4 file in my demo project)
+
+``` On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ExcleFile.xlsx
+        WordFile.docx
+        new%file.txt
+        system.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ ```
+
+## Step-1.1  Add file from working dir to Stagging Area.
+
+- type ``` git add . ``` & hit the enter // if you want to add all file or spacific you can use ``` . ``` Or ``` --a ``` OR ``` NoteFile.txt ```
+
+- type ``` git status ``` & hit the enter 
+
+output
+ 
+ ```
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   ExcleFile.xlsx
+        new file:   WordFile.docx
+        new file:   new%file.txt
+        new file:   system.log
+```
+ 
+### Step-1.2 Commit your file
+
+- type ``` git commit -m "First Commit" ``` & hit the enter 
+
+- output
+ 
+ ```
+[master (root-commit) 326e677] First Commit
+ 5 files changed, 191 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 ExcleFile.xlsx
+ create mode 100644 NoteFile.txt
+ create mode 100644 WordFile.docx
+ create mode 100644 new%file.txt
+
+```
+- type ``` git status ``` & hit the enter 
+
+- output 
+
+``` 
+On branch master
+nothing to commit, working tree clean
+```
+  
+
+ ## Step-3.0 check status
+ ``` git status ```
+
+ output 
+ 
+ ```
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+Now, Open File "NewFile.txt" in any TextEditor and to do some changes, In my case, I'm writing " This file content has been changed!!. " and save the file.
+  </detail>
