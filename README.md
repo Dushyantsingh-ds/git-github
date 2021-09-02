@@ -240,14 +240,19 @@ XXXXXXXXX End of Praticle  XXXXXXXXX
 <details>
   <summary>Click to expand!</summary>
  
- Preventing unintentional staging or commiting of files
-git config --global core.excludesfile [file]
-system wide ignore patern for all local repositories
+Preventing unintentional staging or commiting of files
+
+``` 
 logs/
 *.notes
 pattern*/
+``` 
 Save a file with desired paterns as .gitignore with either direct string
 matches or wildcard globs.
+  
+``` git config --global core.excludesfile [file] ```
+  
+  system wide ignore pattern for all local repositories
 </details>
  
  ### @Practice Time 
@@ -422,8 +427,7 @@ Date:   Fri Aug 27 18:12:17 2021 +0530
 XXXXXXXXX End of Praticle  XXXXXXXXX
 </details>
  
-##############################################################################################
-# Git diff: see the differences.
+  # Git diff: see the differences.
 <details>
   <summary>Click to expand!</summary>
  
@@ -437,7 +441,6 @@ diff of what is staged but not yet committed OR see diff between staged and comm
 
 </details>
   
-###################################################################################################
  
   ### @Practice Time 
 
@@ -545,5 +548,259 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
-Now, Open File "NewFile.txt" in any TextEditor and to do some changes, In my case, I'm writing " This file content has been changed!!. " and save the file.
-  </detail>
+  
+## Step-4 See Diff (Tacked VS Staged)
+Do some changes in any file, In my case, I want to do some chnge in the file NewFile.txt.
+  
+-Now, Open File "NewFile.txt" in any TextEditor.
+  
+- I'm writing "This file content has been changed!!. " and save the file.
+  
+``` git diff ``` & hit the enter
+  
+output
+``` 
+  
+diff --git a/NoteFile.txt b/NoteFile.txt
+index 6c229d8..f88df25 100644
+--- a/NoteFile.txt
++++ b/NoteFile.txt
+@@ -136,9 +136,9 @@ dUSHYANTsINGH
+
+-My First Name is Dushyant
+
+
++My Full Name is Dushyant Singh
+
+```
+  ``` --- a/NoteFile.txt ``` means something has been deleted in the file
+ ``` +++ b/NoteFile.txt ``` means something has been added in the file
+  
+ ``` -My First Name is Dushyant ```  Minus(-) sign denote delete, so this line has been deleted in the file First
+ ``` +My Full Name is Dushyant Singh  ``` plus(+) sign denote delete, so this line has been added in the file First
+ 
+ This diffracnes between Tracked and Staged file,
+  
+  
+## Step-4 See Diff (Staged VS Commited)
+  
+``` git diff --staged ``` & hit the enter
+  
+output
+``` 
+
+```
+  Null output means there is no diffrance between staged and commited file.
+ 
+## Step-5 commit the earlier change
+``` git add . ``` or your can give your perticulae file name ``` git add NewFile.txt ``` & hti the enter
+
+See the diffrance before commiting
+``` git diff --staged ``` & hit the enter
+
+  output
+  ```
+  diff --git a/NoteFile.txt b/NoteFile.txt
+index f88df25..f464f91 100644
+--- a/NoteFile.txt
++++ b/NoteFile.txt
+@@ -138,7 +138,7 @@ dUSHYANTsINGH
+
+
+-My First Name is Dushyant
++My Full Name is Dushyant Singh
+
+```
+  
+``` --- a/NoteFile.txt ``` means something has been deleted in the file
+  
+ ``` +++ b/NoteFile.txt ``` means something has been added in the file
+  
+ ``` -My First Name is Dushyant ```  Minus(-) sign denote delete, so this line has been deleted in the file First
+  
+ ``` +My Full Name is Dushyant Singh ``` plus(+) sign denote delete, so this line has been added in the file First
+ 
+  
+  
+  ``` git commit -m "Second commit" ``` & hit the enter  
+
+  output
+  
+  ```
+ [master decdf92] Second commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+  xxxxxxxxxx END OF PRACTICE XXXXXXXXX
+  
+</details>
+
+
+# Git -am "Your Commit": commit without staging
+
+Unstages file, keeping the file changes
+  
+<details>
+ Lev.1 <summary>Click to expand! </summary>
+ 
+``` Git -a -m "commit message” ``` OR ``` Git -am "commit message" //Unstages file, keeping the file changes
+  
+Note: This command only used for already tracked file not for new untracked file. Once you need to track the file.
+</details>
+
+### @Practice Time 
+
+
+<details>
+  <summary>Click to expand!</summary>
+ 
+How to implement commit changes with without stagging in our project.
+
+### Step-1.0 initialization
+
+- Open Git Bash in your working Dir. using Right click on the folder and select Git Bash.
+
+- type ``` git status ``` & hit the enter 
+
+- output ``` fatal: not a git repository (or any of the parent directories): .git ```
+
+its means there is no any git initialized.
+
+- type ``` git init ```
+
+- output ``` Initialized empty Git repository in D:/Learn/Git/.git/ ```
+
+now your working directory have a git file.
+
+- type ``` git status ``` & hit the enter 
+
+-output (I have 4 file in my demo project)
+
+``` On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        ExcleFile.xlsx
+        NoteFile.txt
+        WordFile.docx
+        new%file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+ ```
+ 
+ ## Step-1.1 Add file from Working Dir to Stagging Area.
+
+- type ``` git add . ``` & hit the enter // if you want to add all file or spacific you can use ``` . ``` Or ``` --a ``` OR ``` NoteFile.txt ```
+
+- type ``` git status ``` & hit the enter 
+
+output
+
+``` 
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:  .gitignore
+        new file:   ExcleFile.xlsx
+        new file:   NoteFile.txt
+        new file:   WordFile.docx
+        new file:   new%file.txt
+
+```
+Color Diffrance Red to Green (Red means Your file is tracking not in Stagging area. or Unmodify & Green Means you file is add into Stagging area with Modiifide)
+
+### Step-1.2 Commit your file
+
+- type ``` git commit -m "First Commit" ``` & hit the enter 
+
+- output
+
+```
+[master (root-commit) 9c6946c] first Commit
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 .gitignore
+ create mode 100644 ExcleFile.xlsx
+ create mode 100644 NoteFile.txt
+ create mode 100644 WordFile.docx
+ create mode 100644 new%file.txt
+```
+
+- type ``` git status ``` & hit the enter 
+
+- output 
+
+``` 
+On branch master
+nothing to commit, working tree clean
+
+```
+
+Do some changes in any file, In my case, I want to do some chnge in the file NewFile.txt.
+  
+-Now, Open File "NewFile.txt" in any TextEditor.
+  
+- I'm writing "This is Dushyant Singh." and save the file.
+  
+
+## Step-2 Use git -am "commit message" cmd
+- type ``` git -am "Second Commit ``` & hit the enter 
+
+- output
+
+```
+[master b9241af] Second Commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+```
+- type ``` git status ``` & hit the enter 
+
+- output 
+
+``` 
+On branch master
+nothing to commit, working tree clean
+
+```
+
+XXXXXXXXX End of Praticle  XXXXXXXXX
+- type ``` git status ``` & hit the enter 
+
+- output 
+
+``` 
+On branch master
+nothing to commit, working tree clean
+
+```- type ``` git status ``` & hit the enter 
+
+- output 
+
+``` 
+On branch master
+nothing to commit, working tree clean
+
+```- type ``` git status ``` & hit the enter 
+
+- output 
+
+``` 
+On branch master
+nothing to commit, working tree clean
+
+```- type ``` git status ``` & hit the enter 
+
+- output 
+
+``` 
+On branch master
+nothing to commit, working tree clean
+
+```
+  
+ 
+  
