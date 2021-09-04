@@ -768,45 +768,13 @@ nothing to commit, working tree clean
 ```
 
 XXXXXXXXX End of Praticle  XXXXXXXXX
-- type ``` git status ``` & hit the enter 
-
-- output 
-
-``` 
-On branch master
-nothing to commit, working tree clean
-
-```- type ``` git status ``` & hit the enter 
-
-- output 
-
-``` 
-On branch master
-nothing to commit, working tree clean
-
-```- type ``` git status ``` & hit the enter 
-
-- output 
-
-``` 
-On branch master
-nothing to commit, working tree clean
-
-```- type ``` git status ``` & hit the enter 
-
-- output 
-
-``` 
-On branch master
-nothing to commit, working tree clean
-
-```
-  ######################################
+</details>
+  
  
 # Git mv OldFileName.txt NewFileName.txt: Renaming the file
 
 <details>
- Lev.1 <summary>Click to expand! </summary>
+<summary>Click to expand! </summary>
  
 ``` git mv [existing-path] [new-path] ```
 // change an existing file path and stage the move
