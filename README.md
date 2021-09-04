@@ -801,6 +801,15 @@ On branch master
 nothing to commit, working tree clean
 
 ```
-  
+  ######################################
  
-  
+# Git mv OldFileName.txt NewFileName.txt: Renaming the file
+
+<details>
+ Lev.1 <summary>Click to expand! </summary>
+ 
+``` git mv [existing-path] [new-path] ```
+// change an existing file path and stage the move
+
+</details>
+
