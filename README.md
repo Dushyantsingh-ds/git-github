@@ -1,7 +1,13 @@
+# Git & GitHub 
 ## KeyPoints
 <details>
   <summary>Click to expand!</summary>
- 
+ - Author :
+  who creates the file
+  
+  - Commit :
+  who update/delete the file but not create.
+  
 - Pull : 
  getting file, Data from server into our System/Locally
  
@@ -9,7 +15,9 @@
  Send/Tranfer My file/Data to main server or main Presental Location/Server/Repo.
 </details>
 
-
+# About
+<details>
+  <summary>Click to expand!</summary>
 ## What is Git
 <details>
   <summary>Click to expand!</summary>
@@ -36,6 +44,7 @@ When he want to do any chanage in the local repo, that change will not affact ma
 
 Available tools for mangesning free Git use : Github, GitLab, GitBucket
 </details>
+</details>
 
 # Features
 <details>
@@ -51,7 +60,11 @@ It takes the snapshoot of the changes. like a photo shoot
 CheckSum is a techqun to see our data tranfer protected or un protected. Every Data/File having own diffrent CheckSum in the form of String. 
 </details>
 
-# Install Git using : 
+# Setup
+<details>
+  <summary>Click to expand!</summary>
+  
+## Install Git using : 
 <details>
   <summary>Click to expand!</summary>
 INSTALLATION & GUIS
@@ -85,7 +98,7 @@ If you already have Git installed, you can get the latest development version vi
 </details>
  
 
-# User SETUP cmd
+## User SETUP cmd
 <details>
   <summary>Click to expand!</summary>
 
@@ -104,8 +117,42 @@ set an email address that will be associated with each history marker
 set automatic command line coloring for Git for easy reviewing
 
 </details>
+</details>
 
-# STAGE & SNAPSHOT cmd
+# Git Commands >>>>
+## vim text editor
+<details>
+<summary>Click to expand! </summary>
+### i // used for insert 
+  ### Esc // exite from typing area, come from command area
+  ### :wq // to save the changes in vim
+  </detials>
+## Quick Commands
+<details>
+<summary>Click to expand! </summary>
+### q // exit from commands  
+### rm -rf .git // used to delete the repo.
+### git log -p // see the logs with the change in content *
+### git log -p -3 // see the logs with only 3 top commits diit in content *
+### git log --stat // see the oeverview of commits in summary *
+### git log --pretty=oneline // to see the all commits title  *
+### git log --pretty=oneline // to see the all commits title with author. 
+### git log --since=2.days // to see the commits of 2 days before *
+### git log --since=2.weeks // to see the commits of 2 week before *
+### git log --since=2.months // to see the commits of 2 months before *
+### git log --since=2.years // to see the commits of 2 years before *
+### git log --pretty=formate:"%an -- %ae // to see the all author with his/her Hass "%an= author name and %ae = author email 
+### git log --pretty=formate:"%h -- %an // to see the all author with his/her Hass "%h= hass and %an = authorname for more log commands visit : git-scm.com/docs/git-log
+  
+
+
+
+</details>
+
+## Working Commands
+<details>
+  <summary>Click to expand! </summary>
+## STAGE & SNAPSHOT cmd
 
 <details>
  Lev.1 <summary>Click to expand! </summary>
@@ -236,7 +283,7 @@ Date:   Fri Aug 27 03:38:59 2021 +0530
 XXXXXXXXX End of Praticle  XXXXXXXXX
 </details>
   
-# IGNORING PATTERNS
+## IGNORING PATTERNS
 <details>
   <summary>Click to expand!</summary>
  
@@ -427,7 +474,7 @@ Date:   Fri Aug 27 18:12:17 2021 +0530
 XXXXXXXXX End of Praticle  XXXXXXXXX
 </details>
  
-  # Git diff: see the differences.
+  ## Git diff: see the differences.
 <details>
   <summary>Click to expand!</summary>
  
@@ -635,7 +682,7 @@ index f88df25..f464f91 100644
 </details>
 
 
-# Git -am "Your Commit": commit without staging
+## Git -am "Your Commit": commit without staging
 
 Unstages file, keeping the file changes
   
@@ -771,7 +818,7 @@ XXXXXXXXX End of Praticle  XXXXXXXXX
 </details>
   
  
-# Git mv OldFileName.txt NewFileName.txt: Renaming the file
+## Git mv OldFileName.txt NewFileName.txt: Renaming the file
 
 <details>
 <summary>Click to expand! </summary>
@@ -780,4 +827,30 @@ XXXXXXXXX End of Praticle  XXXXXXXXX
 // change an existing file path and stage the move
 
 </details>
+  
+## Git rm new_file.txt: Remove the file
+<details>
+<summary>Click to expand! </summary>
+ 
+``` git rm [existing-path]  ```
+// delete the file/dir
+</details>
 
+ 
+## Git rm --cached new_file.txt: Remove the file
+<details>
+<summary>Click to expand! </summary>
+ 
+``` git rm --cached [existing-path]  ```
+// untrack file after file added in .gitignore. the file has commited many time. this command is used to untrack the file from the git system.
+</details>
+  </details>
+  
+  ## Git log --amend: merge the pervious commits with your new commit
+<details>
+<summary>Click to expand! </summary>
+ 
+``` git log --amend  ```
+// used to do the merge in pervious commit with your new commit
+</details>
+  </details>
